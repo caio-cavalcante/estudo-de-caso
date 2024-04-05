@@ -1,6 +1,6 @@
 package questao1;
 
-public class carroTest {
+public class CarroTest {
     public static void main(String[] args) {
         Carro carro1 = new Carro();
         carro1.modelo = "Honda Civic";
