@@ -21,38 +21,51 @@ public class Carro {
     public double aceleracao;
     public int marcha;
 
-    public void ligaDesliga() {
-        if (velocidade != 0) {
-            System.out.println(modelo + " está ligado.");
-        } else {
-            System.out.println(modelo + " está desligado.");
-        }
+    public void liga() {
+        System.out.println(modelo + " está ligado.");
     }
 
-    public void aceleraDesacelera() {
+    public void desliga() {
+        System.out.println(modelo + " está desligado.");
+    }
+
+    public void acelerar() {
         velocidade = velocidade + aceleracao;
-        if (aceleracao > 0) {
-            System.out.println(modelo + " está acelerando. Agora a " + velocidade);
-        } else if (aceleracao < 0) {
-            System.out.println(modelo + " está desacelerando. Agora a " + velocidade);
-        } else {
-            System.out.println(modelo + " está parado.");
-        }
+        System.out.println(modelo + " está acelerando. Agora a " + velocidade + "km/h");
     }
 
-    public void virar() {
+    public void frear() {
+        velocidade = velocidade - aceleracao;
+        System.out.println(modelo + " está freando. Agora a " + velocidade + "km/h");
+    }
+
+    public void virarEsquerda() {
         if (velocidade > 0) {
-            System.out.println(modelo + " pode virar para esquerda ou direita.");
+            System.out.println(modelo + " virou para esquerda.");
         } else {
             System.out.println(modelo + " está parado.");
         }
     }
 
-    public void mudarMarcha() {
+    public void virarDireita() {
+        if (velocidade > 0) {
+            System.out.println(modelo + " virou para direita.");
+        } else {
+            System.out.println(modelo + " está parado.");
+        }
+    }
+
+    public void subirMarcha() {
         if (aceleracao > 0) {
             marcha += 1;
             System.out.println(modelo + " agora está na " + marcha + "ª marcha.");
-        } else if (aceleracao < 0) {
+        } else {
+            System.out.println(modelo + " está parado.");
+        }
+    }
+
+    public void descerMarcha() {
+        if (aceleracao > 0) {
             marcha -= 1;
             System.out.println(modelo + " agora está na " + marcha + "ª marcha.");
         } else {
